@@ -1,9 +1,8 @@
 ---
-title: Home
+title: Stockworks
 layout: home
 nav_order: 1
-description: "My personal website."
-permalink: /
+parent: Projects
 ---
 
 # Adam Loeckle
@@ -14,15 +13,15 @@ Lover of software and machine learning. Computer vision is cool.
 
 [Github][adamloec github]{: .btn .fs-5 .mb-4 .mb-md-0 }
 
----
-
 ## About
 
-
-
 ---
 
+
+
 ## Professional Experience
+
+---
 
 ### Aristocrat R&D
 
@@ -34,9 +33,9 @@ Lover of software and machine learning. Computer vision is cool.
 
 - **Reasearch Assistant :** *January 2021 - September 2021*
 
----
-
 ## Education
+
+---
 
 ### Oklahoma State University
 
