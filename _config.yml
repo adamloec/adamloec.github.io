@@ -6,7 +6,7 @@ url: https://adamloec.github.io
 
 permalink: pretty
 
-color_scheme: dark # nil/light/dark
+color_scheme: nil # nil/light/dark
 
 search_enabled: false
 
