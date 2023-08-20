@@ -28,11 +28,15 @@ This is supposed to be a starting point for setting up development utilizing a R
 
 ![Homecoming Deck](/images/homecoming/homecoming-deck.JPG "Homecoming Deck")
 
+---
+
 ## How It Started
 
 I was assigned to lead the engineering team for my fraternity in homecoming. One of our main jobs is to create and operate all of the moving parts for our homecoming deck. In the past, the teams solution to this was to use separately programmed Arduinos that were used to individually control motors. Timing is key to this method, as they have to start the devices all at the same time so that the moving parts on the deck run simultaneously. They were programming the arduinos with seperate code with different time intervals for each device. When I realized this is what they have been doing in the past, it made me wonder if there was a better solution to this problem. 
 
 I already owned my own Raspberry Pi, so I started doing some research on communication between the device and other micro controllers. I read about some projects using the I2C (Inter-integrated Circuit) communication protocol for both devices, but a lot of the information I found was not very "beginner friendly" and/or it lacked in-depth information. I was able to create a prototype on my own after a few days of work, but I wanted to make it easier for future developers looking for I2C guidance.
+
+---
 
 ## Development
 
@@ -272,6 +276,8 @@ python3 test.py
 
 If everything is working correctly, your relays will close and open depending on which the test parameters that are chosen.
 
-### Conclusion
+---
+
+## Conclusion
 
 Hopefully this helps some people out there who are looking for a more indepth instruction for using I2C connections. You can alter the code I provided to suit your needs in your DIY projects at home. The options are endless.
