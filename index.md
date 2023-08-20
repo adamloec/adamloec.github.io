@@ -56,6 +56,12 @@ Currently, my focus is on deep learning development and its applications. The bo
 
 - **Machine Learning Specialization (Coursera)**
 
+---
+
+## Patents
+
+- Pending
+
 
 [adamloec github]: https://github.com/adamloec
 [adam linkedin]: https://linkedin.com/in/adam-loeckle
