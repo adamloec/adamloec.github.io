@@ -135,7 +135,6 @@ In the final phase of the project, both our design and the Wally processor neede
 ##### Struct Package
 {: .mb-lg-4 }
 
-Struct Package (Adam Loeckle)
 To allow for dynamic expansion of the AHB bus system to accommodate an arbitrary number of masters, we came up with a system to handle each AHB Manager (Master) and AHB Subordinate (Slave) device’s respective data signals accordingly across the platform. Given the large number of signals that are associated with these devices, we implemented a struct system. These structs are used in a dynamic array that is based on the number of managers that are defined globally for Wally. This will allow future users of the platform to add/change the number of managers with ease, making an expansion of the project agile.
 
 Using this method of dynamic struct arrays allows for an easy method to add future managers to Wally. These struct definitions replace the input and output logic of the manager and subordinate signals in Uncore, the AHBlite bus, as well as higher-level modules in Wally that handle this manager and subordinate data. When implementing the full AHB interconnect inside of Uncore, these manager signals will be accessed by referencing the enumeration definition in the struct package. After this implementation, using only one manager (CPU), the Wally regression tests passed. Pictured below is the struct package definition:
