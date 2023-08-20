@@ -25,7 +25,7 @@ I created this project to provide further instruction for future engineers worki
 This is supposed to be a starting point for setting up development utilizing a Raspberry Pi and Arduino's paired over I2C.
 
 {: .header}
-We recieved the award for the *Best Engineering Team and Design*, judged by University CEAT (College of Engineering, Architecture, and Technology) professors and colleagues.
+We recieved the award for the *Best Engineering Team and Design*, judged by University CEAT (College of Engineering, Architecture, and Technology) professors and colleagues, for my newly designed system for controlling the moving parts on the homecoming deck.
 
 [Original Hackster.io Article](https://www.hackster.io/adam-loeckle/raspberry-pi-controlling-arduinos-with-i2c-connections-e72964)
 
