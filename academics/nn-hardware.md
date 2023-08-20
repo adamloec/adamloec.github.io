@@ -188,6 +188,8 @@ multipliers will be used:
 The weights (w) and biases (b) will be imported from the final model of the python
 implementation in phase 2.
 
+---
+
 ## Final Report
 
 ### Introduction
@@ -569,8 +571,9 @@ the carry over bits in the multiplier module were inaccurate. I unfortunately co
 issue in the time of completing this report. This not working leads to the layer and neural
 network modules to fail because it is the backbone of these parts.
 
-##### Conclusion
-{: .mb-lg-4 }
+---
+
+## Conclusion
 
 This project was extremely fun yet difficult. I believe that more experience using Verilog
 in prior classes would have benefited me, and probably other students, greatly in completing
