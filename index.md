@@ -18,7 +18,7 @@ Software Engineer
 
 ## About
 
-=I'm Adam, a dedicated Software Engineer driven by an unwavering passion for coding.
+I'm Adam, a dedicated Software Engineer driven by an unwavering passion for coding.
 
 One of my main passions is delving into the realm of machine learning and neural network development. The intricacies of these technologies fascinate me, and I'm committed to exploring their potential to create groundbreaking solutions.
 
