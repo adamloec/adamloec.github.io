@@ -6,6 +6,8 @@ url: https://adamloec.github.io
 
 permalink: pretty
 
+color_scheme: dark
+
 search_enabled: false
 
 enable_copy_code_button: true
