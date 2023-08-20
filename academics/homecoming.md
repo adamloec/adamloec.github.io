@@ -159,7 +159,8 @@ The provided Python code for the Raspberry Pi is my testing code for my project.
 
 {: .header }
 Raspberry Pi Test Code
-```
+
+{% highlight python %}
 from smbus import SMBus
 import time
 
@@ -198,11 +199,12 @@ def down():
     bus.write_byte(addr, 0x1)
     time.sleep(timedown)
     bus.write_byte(addr, 0x0)
-```
+{% endhighlight %}
 
 {: .header }
 Arduino Test Code
-```
+
+{% highlight c %}
 #include <Wire.h>
 
 #define forward 10
@@ -239,24 +241,24 @@ void receiveEvent(int howMany) {
     }
   }
 }
-```
+{% endhighlight %}
 
 
 - The address assignments are the addresses for each Arduino that is connected to the Raspberry Pi:
 
-```
+{% highlight python %}
 addr = 0x5
 addr2 = 0x6
 addrN = 0xN
-```
+{% endhighlight %}
 
 - Writing to the bus, we will send *0x0*, *0x1*, and *0x2* values to tell the motor to stop, move forward, and move backward respectively:
 
-```
+{% highlight python %}
 bus.write_byte(addr2, 0x2) # Motor moves backward.
 bus.write_byte(addr, 0x1) # Motor moves forward.
 bus.write_byte(addr, 0x0) # Motor stops movement.
-```
+{% endhighlight %}
 
 ---
 
