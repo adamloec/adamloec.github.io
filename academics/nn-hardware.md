@@ -20,7 +20,7 @@ Hardware Implementation of an MLP Neural Network Model in System Verilog.
 
 ## About
 
-This documentation contains the contents of my initial, midterm, and final report for my Neural Network Hardware Implementation design project for ECEN4303 in which I recieved an A+. I created a hardware implementation of a MLP (Multi-layer Percepton) feedforward neural network in System Verilog.
+This documentation contains the contents of my initial, midterm, and final report for my Neural Network Hardware Implementation design project for ECEN4303 in which I recieved an **A+**. I created a hardware implementation of a MLP (Multi-layer Percepton) feedforward neural network in System Verilog.
 
 These reports will showcase my design choices, changing between a CNN (Convolutional Neural Network) and MLP, and the final results of the project including code and structure.
 
@@ -83,7 +83,6 @@ output:
 ```
 𝑜𝑢𝑡1 = 0.5𝑖𝑛1 + 0.5𝑖𝑛2 + 0.5𝑖𝑛3 + 0.5𝑖𝑛4 + 𝑏 = 4.25
 𝑜𝑢𝑡2 = 0.5𝑖𝑛2 + 0.5𝑖𝑛3 + 0.5𝑖𝑛7 + 0.5𝑖𝑛8 + 𝑏 = 2.5
-
 ```
 
 ---

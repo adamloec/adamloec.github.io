@@ -258,7 +258,9 @@ bus.write_byte(addr, 0x1) # Motor moves forward.
 bus.write_byte(addr, 0x0) # Motor stops movement.
 ```
 
-### Operating the Program
+---
+
+## Operating the Program
 
 Once you have uploaded your code and your wiring is secure, log into the Raspberry Pi terminal and type the following code to scan for the Arduino:
 

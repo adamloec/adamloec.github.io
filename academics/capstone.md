@@ -20,7 +20,7 @@ Hardware-Based Video Controller and Graphics Processor Unit for a RISC-V process
 
 ## About
 
-This documentation contains the contents of the final-deliverable my team presented for our Capstone Design project. We recieved the award for the [ECE Best Senior Design Project] from the ECE department at Oklahoma State University.
+This documentation contains the contents of the final-deliverable my team presented for our Capstone Design project. We recieved the award for the [ECE Best Senior Design Project] from the ECE department at Oklahoma State University, as well as an **A+** final grade.
 
 [ECE Best Senior Design Project]: https://ceat.okstate.edu/announcements/ece/2021/spring-2022-ceat-senior-design-expo.html
 
