@@ -50,7 +50,7 @@ Currently, my focus is on deep learning development and its applications. The bo
 
 - **B.S. Computer Engineering, Minor in Computer Science :** *2018 - 2022*
 
-[adamloec github]: https://github.com/just-the-docs/just-the-docs
+---
 
 ## Certifications
 

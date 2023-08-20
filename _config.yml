@@ -11,3 +11,10 @@ color_scheme: dark
 search_enabled: false
 
 enable_copy_code_button: true
+
+callouts:
+  note:
+    title: NOTE 
+    color: blue
+  header:
+    color: blue
