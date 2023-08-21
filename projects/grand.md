@@ -24,15 +24,13 @@ A naive Neural Network and Tensor library, for learning purposes.
 
 ---
 
-## Dependencies
-
----
-
 ## Research
 
 ---
 
 ## Development
+
+### Dependencies
 
 ### Tensors
 
