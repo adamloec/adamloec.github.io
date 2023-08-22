@@ -16,6 +16,21 @@ Software Engineer
 
 ---
 
+## My Work
+{: .no_toc .text-delta }
+1. [Academic Work](/academic/academic/)
+    - [Capstone Design](/academic/capstone/)
+    - [Neural Network Hardware Implementation](/academic/nn-hardware/)
+    - [Homecoming Engineering](/academic/homecoming/)
+2. [Projects](/projects/projects/)
+    - [Grand - Neural Network Framework](/projects/grand/)
+    - [Stockworks](/projects/stockworks/)
+    - [UWApp (Universal Web Application)](/projects/uwapp/)
+
+
+
+---
+
 ## About
 
 I'm Adam, a dedicated Software Engineer driven by an unwavering passion for coding.
