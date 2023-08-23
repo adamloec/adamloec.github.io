@@ -35,7 +35,7 @@ Software Engineer
 
 I'm Adam, a dedicated Software Engineer driven by an unwavering passion for coding.
 
-One of my main passions is delving into the realm of machine learning and neural network development. The intricacies of these technologies fascinate me, and I'm committed to exploring their potential to create groundbreaking solutions.
+One of my interests is delving into the realm of machine learning and neural network development. The intricacies of these technologies fascinate me, and I'm committed to exploring their potential to create groundbreaking solutions.
 
 Beyond the 9-to-5, I'm always on the lookout for exciting projects to dive into. The thrill of bringing a new idea to life through coding is unmatched, and I enjoy the challenge that each project brings.
 
