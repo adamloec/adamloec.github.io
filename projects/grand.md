@@ -5,6 +5,9 @@ nav_order: 1
 parent: Projects
 ---
 
+[grand github]: https://github.com/adamloec/grand
+[Tensorflow Keras Classification Tutorial]: https://www.tensorflow.org/tutorials/keras/classification
+
 # Grand Framework
 {: .no_toc }
 {: .fs-9 }
@@ -286,6 +289,3 @@ def forward(self, input):
     self.output = (input @ self.weights) + self.biases
     return self.activation(self.output)
 {% endhighlight %}
-
-[grand github]: https://github.com/adamloec/grand
-[Tensorflow Keras Classification Tutorial]: https://www.tensorflow.org/tutorials/keras/classification
