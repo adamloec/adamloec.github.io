@@ -242,13 +242,11 @@ TEST tensor_tensor_add Runs: 1000/1000 PASS
 Duration: 0.2440s
 ```
 
----
-
 ### Layers
 
 The layers purpose is to make the mathematical, functional, connections between neurons in the network. I chose to follow a Tensorflow approach to integrating activation functions into the layer object itself, instead of creating a seperate layer. This, in my opinion, will allow for easier-to-read model construction.
 
-###### Design
+###### Layer
 {: .mb-lg-4 }
 
 > - 1-2D Tensor data
@@ -256,36 +254,116 @@ The layers purpose is to make the mathematical, functional, connections between 
 > - Integrated activation functions
 > - Weights and biases
 
-Below is the parent Layer object that I designed. The layer will take in dimensions as a parameter, and will create an empty array of output values based on the shape. The weights and biases will be set during model construction because their sizing is dependent on neighboring layers.
+Below is the parent Layer object that I designed. The paremeter of units for the layer is the number of output neurons the layer will have.
 
 {% highlight Python %}
 class Layer:
-    def __init__(self, *dim, dtype=np.float32):
-        self.dtype = dtype
-        self.output = Tensor.empty(*dim, dtype=self.dtype)
-        self.dim = self.output.dim
+    def __init__(self, units=0, *, input_shape=0, dtype=np.float32, activation=Activation.Linear):
+        if input_shape != 0:
+            if not isinstance(input_shape, tuple):
+                raise TypeError("ERROR: input_shape must be of type tuple")
+            self.shape = (None,) + tuple(input_shape,)
+        else: 
+            self.shape = (None, units)
 
+        self.dtype = dtype
+        self.activation = activation
+        
         self.weights = None
         self.biases = None
+        self.output = None
+
+        self._is_input = False
+        self._has_built = False
 {% endhighlight %}
+
+The layer object has a builder method for constructing and connecting a models layers together upon initialization. This method takes in the previous layers shape and constructs the weigths and biases based on these dimensions:
+
+{% highlight Python %}
+def _build(self, prev_shape, is_input=False):
+    if is_input:
+        self._is_input = True
+        return
+    if not isinstance(prev_shape, tuple):
+            raise TypeError("ERROR: input_shape must be of type tuple")
+    
+    self.weights = Tensor.rand(prev_shape[-1], self.shape[-1])
+    self.biases = Tensor.rand(1, self.shape[-1])
+    self._has_built = True
+{% endhighlight %}
+
+###### Dense
+{: .mb-lg-4 }
+
+The dense layer is the main layer type used in Grand. This layer is a conventional dense layer used to construct an MLP neural network model.
 
 {% highlight Python %}
 class Dense(Layer):
-    def __init__(self, size, *, dtype=np.float32, activation=Activation.ReLU):
-        if not isinstance(size, int):
-            raise TypeError("ERROR: Dense layer size must be single integer")
-        
-        super().__init__(size, dtype=dtype)
-        self.activation = activation
+    def __init__(self, units, *, input_shape=0, dtype=np.float32, activation=Activation.Linear):
+        super(Dense, self).__init__(units, input_shape=input_shape, dtype=dtype, activation=activation)
 {% endhighlight %}
 
+The forward method computes the linear regression function of the inputs, weights, and biases for each neuron in the layer. This activation function gets applied to this output before being returned, and passed to the next layer:
+
 {% highlight Python %}
-def forward(self, input):
+def forward(self, data):
     if not isinstance(input, Tensor):
         raise TypeError("ERROR: Input must be of type Tensor")
     if self.weights == None or self.biases == None:
         raise Exception("ERROR: Weights and biases have not been created")
-
-    self.output = (input @ self.weights) + self.biases
+    
+    self.output = (data @ self.weights) + self.biases
     return self.activation(self.output)
+{% endhighlight %}
+
+###### Flatten
+{: .mb-lg-4 }
+
+The flatten layer is a 'filler' layer, that flattens input data to a specified shape. I designed this layer to not have trainable parameters, like weights and biases, and to only reshape the data.
+
+{% highlight Python %}
+class Flatten(Layer):
+    def __init__(self, input_shape=0, dtype=np.float32):
+        if not isinstance(input_shape, tuple):
+                raise TypeError("ERROR: input_shape must be of type tuple")
+        
+        self.reshaped = 1
+        for s in input_shape:
+            self.reshaped *= s
+        super(Flatten, self).__init__(0, input_shape=(self.reshaped,), dtype=dtype)
+
+    def forward(self, data):
+        if not isinstance(data, Tensor):
+            raise TypeError("ERROR: Input data must be of type Tensor")
+        
+        self.output = data.reshape(data[0], self.reshaped)
+        return self.activation(self.output)
+{% endhighlight %}
+
+### Model
+
+The model object is responsible for building the neural network and performing training and validation operations on training and testing data. The model will build the connections between each layer in the network, and ensure the data shapes match. This object will also contain the loss and optimizer functions for back propogation and model training.
+
+{% highlight Python %}
+class Model:
+    def __init__(self, layers=[]):
+        self.layers = layers
+        for layer in self.layers:
+            if not isinstance(layer, Layer):
+                raise TypeError("ERROR: Model inputs must all be layers")
+
+        self.loss = None
+        self.optimizer = None
+{% endhighlight %}
+
+The compile method makes the shape connections between each layer in the network. The first layer is singled out as the input layer, and will be constructed without weights and biases.
+
+{% highlight Python %}
+def compile(self, loss, optimizer):
+    self.layers[0]._build(is_input=True)
+    for i in range(1, len(self.layers)):
+        self.layers[i]._build(self.layers[i-1].shape)
+
+    self.loss = loss
+    self.optimizer = optimizer
 {% endhighlight %}
