@@ -61,7 +61,7 @@ Currently, my focus is on deep learning development and its applications. The bo
 
 ### Georgia Institute of Technology
 
-- **M.S. Computer Science, Specialization in Machine Learning** *Starting 2024*
+- **M.S. Computer Science, Specialization in Machine Learning :** *Starting 2024*
 
 ### Oklahoma State University
 
