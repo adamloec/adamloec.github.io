@@ -33,13 +33,13 @@ Software Engineer
 
 ## About
 
-I'm Adam, a dedicated Software Engineer driven by an unwavering passion for coding.
-
-One of my interests is delving into the realm of machine learning and neural network development. The intricacies of these technologies fascinate me, and I'm committed to exploring their potential to create groundbreaking solutions.
+I'm Adam, a dedicated Software Engineer driven by a passion for coding and science.
 
 Beyond the 9-to-5, I'm always on the lookout for exciting projects to dive into. The thrill of bringing a new idea to life through coding is unmatched, and I enjoy the challenge that each project brings.
 
 Currently, my focus is on deep learning development and its applications. The boundless possibilities that deep learning offers are truly captivating, and I'm enthusiastic about leveraging this technology to craft solutions that make a real impact.
+
+This website is a personal portfolio for documenting my development and projects.
 
 ---
 
