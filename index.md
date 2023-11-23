@@ -6,7 +6,7 @@ description: "My personal website."
 permalink: /
 ---
 
-# Adam Loeckle
+# Adam
 {: .fs-9 }
 Software Engineer
 {: .fs-6 .fw-300 }
@@ -32,8 +32,6 @@ Software Engineer
 ---
 
 ## About
-
-I'm Adam, a dedicated Software Engineer driven by a passion for coding and science.
 
 Beyond the 9-to-5, I'm always on the lookout for exciting projects to dive into. The thrill of bringing a new idea to life through coding is unmatched, and I enjoy the challenge that each project brings.
 
@@ -61,7 +59,7 @@ This website is a personal portfolio for documenting my development and projects
 
 ### Georgia Institute of Technology
 
-- **M.S. Computer Science, Specialization in Machine Learning :** *Starting 2024*
+- **M.S. Computer Science, Specialization in Machine Learning :** *2024 - 2025*
 
 ### Oklahoma State University
 
