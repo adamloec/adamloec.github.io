@@ -45,7 +45,9 @@ This website is a personal portfolio for documenting my development and projects
 
 ### Aristocrat R&D
 
-- **Software Engineer and Project Lead :** *May 2022 - Current*
+- **Software Engineer 2 :** *April 2024 - Current*
+
+- **Software Engineer 1 :** *May 2022 - April 2024*
 
 - **Software Engineer Intern :** *May 2021 - August 2021*
 
