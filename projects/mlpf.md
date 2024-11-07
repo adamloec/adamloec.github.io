@@ -24,7 +24,7 @@ Machine Learning Pipeline Framework, created as a brief learning experience of a
 
 ## About
 
-Test
+I created this project in the process re-learning the basics to machine learning. This repository showcases the usage of a handful of common ML concepts and models.
 
 ### Readings, resources, and design inspirations
 
