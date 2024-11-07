@@ -122,11 +122,36 @@ The ML Pipeline implementation consists of a modular framework designed to strea
 ### Pipeline Architecture
 
 {% highlight Python %}
-MODELS = {
-    'logistic': LogisticRegression(),
-    'decision_tree': DecisionTreeClassifier(),
-    'random_forest': RandomForestClassifier()
-}
+class MLPipeline:
+    def __init__(self):
+        self.models = MODELS
+        self.current_experiment = None
+        self.results = {}
+        self.feature_engineer = FeatureEngineer()
+    
+    def prepare_features(self, data: pd.DataFrame, numeric_columns=None, categorical_columns=None):
+        if numeric_columns:
+            self.feature_engineer.add_numeric_features(numeric_columns)
+        if categorical_columns:
+            self.feature_engineer.add_categorical_features(categorical_columns)
+        
+        return self.feature_engineer.create_features(data)
+
+    def preprocess_data(self, data: pd.DataFrame) -> pd.DataFrame:
+        data = data.dropna()
+
+        for column in data.select_dtypes(['object']):
+            data[column] = pd.Categorical(data[column]).codes
+
+        return data
+
+    def train(self, name, X_train, y_train):
+        if name not in self.models:
+            raise ValueError(f"Model {name} not found.")
+
+        model = self.models[name]
+        model.fit(X_train, y_train)
+        return model
 {% endhighlight %}
 
 The Machine Learning Pipeline Framework (MLPF) serves as a streamlined interface for training and evaluating machine learning models. At its heart, the MLPipeline class orchestrates the entire workflow, from data preprocessing to model training. The pipeline is designed with flexibility in mind, supporting multiple model types including Logistic Regression, Decision Trees, and Random Forests through a simple registry system. This design makes it straightforward to switch between different models while maintaining a consistent interface for data processing and training.
