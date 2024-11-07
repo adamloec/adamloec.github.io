@@ -131,10 +131,43 @@ MODELS = {
 }
 {% endhighlight %}
 
-The pipeline maintains a registry of supported models through a dictionary that maps model names to their respective scikit-learn implementatons. This design allows for easy addition of new models and provides a clean interface for model selection.
+The Machine Learning Pipeline Framework (MLPF) serves as a streamlined interface for training and evaluating machine learning models. At its heart, the MLPipeline class orchestrates the entire workflow, from data preprocessing to model training. The pipeline is designed with flexibility in mind, supporting multiple model types including Logistic Regression, Decision Trees, and Random Forests through a simple registry system. This design makes it straightforward to switch between different models while maintaining a consistent interface for data processing and training.
 
-#### MLPipeline Class Structure
+The pipeline integrates feature engineering capabilities with model training, providing a cohesive workflow that handles both numerical and categorical data appropriately. By abstracting away the complexity of data preprocessing and model training, it allows users to focus on the higher-level aspects of their machine learning tasks rather than implementation details. The structure ensures that all data goes through proper preprocessing steps before being fed into any model, reducing the chance of errors and inconsistencies in the training process.
 
+#### Feature Engineer
 
+{% highlight Python %}
+class FeatureEngineer:
+    def __init__(self):
+        self.transformers = {}
+        self.numeric_col = []
+        self.categorical_columns = []
+
+    def add_numeric_features(self, columns):
+        self.numeric_columns = columns
+        self.transformers['standard_scaler'] = StandardScaler()
+
+    def add_categorical_features(self, columns):
+        self.categorical_columns = columns
+
+    def create_features(self, data: pd.DataFrame) -> pd.DataFrame:
+        df = data.copy()
+
+        if self.numeric_columns:
+            df[self.numeric_columns] = self.transformers['standard_scaler'].fit_transform(df[self.numeric_columns])
+
+        return df
+{% endhighlight %}
+
+The FeatureEngineer class represents a sophisticated approach to data transformation and preparation. It implements essential preprocessing steps including standardization for numerical features and encoding for categorical variables. The system maintains separate handling for different types of features, allowing for appropriate transformations to be applied to each data type. The standardization process uses sklearn's StandardScaler, ensuring that numerical features are properly scaled to have zero mean and unit variance, which is crucial for many machine learning algorithms to perform optimally.
+
+What makes this feature engineering system particularly useful is its stateful nature - it remembers the transformations applied during training and can consistently apply the same transformations to new data during prediction. This is essential for maintaining the integrity of the machine learning pipeline in production environments. The system is also extensible, designed to accommodate additional transformation types and feature engineering steps as needed.
+
+#### Running the Pipeline
+
+The main execution script serves as the entry point for the entire framework, demonstrating its practical application using the Iris dataset as an example. It showcases how to properly initialize the pipeline, prepare data, train models, and evaluate their performance. The script handles command-line arguments to specify which model to use, making it easy to experiment with different algorithms. It implements a complete workflow from data loading to model evaluation, including proper train-test splitting to assess model generalization.
+
+The runner provides clear feedback about the process, including model training and testing scores, making it easy to compare the performance of different models. It also includes error handling for cases where unsupported models are requested, ensuring graceful failure when invalid inputs are provided. The implementation demonstrates best practices for machine learning workflows, including proper data splitting, feature preprocessing, and model evaluation.
 
 ---
