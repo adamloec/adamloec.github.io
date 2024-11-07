@@ -110,6 +110,8 @@ Random Forest is an ensemble learning method that operates by constructing multi
 
 ## Development
 
+The ML Pipeline implementation consists of a modular framework designed to streamline the machine learning workflow, focusing on model training, feature engineering, and data preprocessing. The core component is the MLPipeline class which orchestrates the entire machine learning process.
+
 ### Dependencies
 
 - Python
@@ -117,11 +119,7 @@ Random Forest is an ensemble learning method that operates by constructing multi
 - pandas
 - mlflow
 
-### ML Pipeline
-
-The ML Pipeline implementation consists of a modular framework designed to streamline the machine learning workflow, focusing on model training, feature engineering, and data preprocessing. The core component is the MLPipeline class which orchestrates the entire machine learning process.
-
-#### Pipeline Architecture
+### Pipeline Architecture
 
 {% highlight Python %}
 MODELS = {
@@ -135,7 +133,7 @@ The Machine Learning Pipeline Framework (MLPF) serves as a streamlined interface
 
 The pipeline integrates feature engineering capabilities with model training, providing a cohesive workflow that handles both numerical and categorical data appropriately. By abstracting away the complexity of data preprocessing and model training, it allows users to focus on the higher-level aspects of their machine learning tasks rather than implementation details. The structure ensures that all data goes through proper preprocessing steps before being fed into any model, reducing the chance of errors and inconsistencies in the training process.
 
-#### Feature Engineer
+### Feature Engineer
 
 {% highlight Python %}
 class FeatureEngineer:
@@ -164,7 +162,7 @@ The FeatureEngineer class represents a sophisticated approach to data transforma
 
 What makes this feature engineering system particularly useful is its stateful nature - it remembers the transformations applied during training and can consistently apply the same transformations to new data during prediction. This is essential for maintaining the integrity of the machine learning pipeline in production environments. The system is also extensible, designed to accommodate additional transformation types and feature engineering steps as needed.
 
-#### Running the Pipeline
+### Running the Pipeline
 
 The main execution script serves as the entry point for the entire framework, demonstrating its practical application using the Iris dataset as an example. It showcases how to properly initialize the pipeline, prepare data, train models, and evaluate their performance. The script handles command-line arguments to specify which model to use, making it easy to experiment with different algorithms. It implements a complete workflow from data loading to model evaluation, including proper train-test splitting to assess model generalization.
 
