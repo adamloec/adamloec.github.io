@@ -25,7 +25,7 @@ Software Engineer
 2. [Projects](/projects/projects/)
     - [Grand - Neural Network Framework](/projects/grand/)
     - [Stockworks](/projects/stockworks/)
-    - [UWApp (Universal Web Application)](/projects/uwapp/)
+    - [MLPF - Machine Learning Pipeline Framework](/projects/mlpf/)
 
 
 
@@ -56,10 +56,6 @@ This website is a personal portfolio for documenting my development and projects
 ---
 
 ## Education
-
-### Georgia Institute of Technology
-
-- **M.S. Computer Science, Specialization in Machine Learning :** *2024 - 2025*
 
 ### Oklahoma State University
 
