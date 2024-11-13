@@ -26,6 +26,7 @@ Software Engineer
     - [Grand - Neural Network Framework](/projects/grand/)
     - [Stockworks](/projects/stockworks/)
     - [MLPF - Machine Learning Pipeline Framework](/projects/mlpf/)
+3. [Cuda Installation](/cuda/)
 
 
 
