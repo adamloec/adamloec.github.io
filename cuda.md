@@ -11,8 +11,6 @@ has_children: false
 Dummy proof guide to install CUDA on anything (with a NVIDIA gpu).
 {: .fs-6 .fw-300 }
 
-[Github][grand github]{: .btn .fs-5 .mb-4 .mb-md-0 }
-
 ## Table of contents
 {: .no_toc .text-delta }
 1. TOC
